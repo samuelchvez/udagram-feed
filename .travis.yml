@@ -14,6 +14,7 @@ before_script:
   - echo "no tests"
 
 script:
+  - echo "POSTGRES_USERNAME=$POSTGRES_USERNAME\nPOSTGRES_PASSWORD=$POSTGRES_PASSWORD\nPOSTGRES_HOST=$POSTGRES_HOST\nPOSTGRES_DB=$POSTGRES_DB\nAWS_BUCKET=$AWS_BUCKET\nAWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID\nAWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY\nAWS_DEFAULT_REGION=$AWS_DEFAULT_REGION\nJWT_SECRET=$JWT_SECRET\nALLOW_REQUESTS_FROM_URL=$ALLOW_REQUESTS_FROM_URL"
   - docker --version # print the version for logging
   - docker build -t udagram-feed .
   - docker tag udagram-feed schavezfuentes/udagram-feed:latest
